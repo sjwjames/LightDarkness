@@ -13,6 +13,31 @@
 
     "jsList" : [
         "src/resource.js",
-        "src/app.js"
+        "src/global/Constants.js",
+        "src/global/GameStats.js",
+        "src/global/MySchedule.js",
+        "src/global/Sound.js",
+        "src/global/Animation.js",
+        "src/gameSprite/Altar.js",
+        "src/gameSprite/Barrel.js",
+        "src/gameSprite/Light.js",
+        "src/gameSprite/Mirror.js",
+        "src/controller/AltarController.js",
+        "src/controller/BarrelController.js",
+        "src/controller/GameController.js",
+        "src/controller/LightController.js",
+        "src/controller/MirrorController.js",
+        "src/ui/AboutUI.js",
+        "src/ui/GameOverUI.js",
+        "src/ui/GamePauseUI.js",
+        "src/ui/GameUI.js",
+        "src/ui/GameWinningUI.js",
+        "src/ui/MainLayerUI.js",
+        "src/ui/LevelsUI.js",
+        "src/ui/StartUI.js",
+        "src/scene/AboutScene.js",
+        "src/scene/GameScene.js",
+        "src/scene/SelectScene.js",
+        "src/scene/StartScene.js"
     ]
 }

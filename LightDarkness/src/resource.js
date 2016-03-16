@@ -1,6 +1,7 @@
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
-    MainScene_json : "res/MainScene.json"
+    startBg:"res/ui/startScene/bg.png",
+    fullPic:"res/sprite/fullpic.png",
+    fullPlist:"res/sprite/fullpic.plist"
 };
 
 var g_resources = [];
