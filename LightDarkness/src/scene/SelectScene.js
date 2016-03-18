@@ -4,5 +4,7 @@
 var SelectScene=cc.Scene.extend({
     ctor: function () {
         this._super();
+        var levelsUI=new LevelsUI();
+        this.addChild(levelsUI);
     }
 });
