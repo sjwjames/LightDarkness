@@ -15,7 +15,7 @@ ListenerFactory.getTouchListener=(function () {
             swallowTouches: false
         });
         if (argumentLength==0){
-            throw ExceptionFactory.getNullArgumentExcption();
+            throw "argument not enough";
         }
 
         switch (argumentLength){

@@ -9,7 +9,7 @@
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d", "cocostudio"],
+    "modules" : ["cocos2d", "cocostudio","external"],
 
     "jsList" : [
         "src/resource.js",
@@ -19,11 +19,13 @@
         "src/global/Sound.js",
         "src/global/Animation.js",
         "src/global/UIConstants.js",
+        "src/global/OnTouch.js",
         "src/gameSprite/Altar.js",
         "src/gameSprite/Barrel.js",
         "src/gameSprite/Light.js",
         "src/gameSprite/Mirror.js",
         "src/factory/ListenerFactory.js",
+        "src/factory/MirrorFactory.js",
         "src/controller/AltarController.js",
         "src/controller/BarrelController.js",
         "src/controller/GameController.js",

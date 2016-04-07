@@ -23,7 +23,10 @@ var StartUI=cc.Layer.extend({
            alert(ex.message);
         }
     },
-    _startGame: function () {
-        cc.director.runScene(new SelectScene());
+    _startGame: function (touch,event) {
+        if(OnTouch.withInReach(touch,event)){
+            cc.director.runScene(new SelectScene());
+        }
+
     }
 });
