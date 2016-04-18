@@ -8,21 +8,39 @@ var GameScene=cc.Scene.extend({
         this.mainLayer=new MainLayerUI(level);
         this.addChild(this.gameUI,1);
         this.addChild(this.mainLayer,2);
+        this.gamePausedUI=new GamePauseUI();
+        this.addChild(this.gamePausedUI,2);
+        this.gamePausedUI.visible=false;
         cc.eventManager.addCustomListener("gamePaused",this.onGamePaused.bind(this));
         cc.eventManager.addCustomListener("gameResumed",this.onGameResumed.bind(this));
+        cc.eventManager.addCustomListener("gameOver",this.onGameOver.bind(this));
     },
     onGamePaused: function () {
         cc.director.pause();
-        this.gamePausedUI=new GamePauseUI();
-        this.addChild(this.gamePausedUI,2);
-        this.removeChild(this.gameUI);
-        this.removeChild(this.mainLayer);
+        this.gamePausedUI.visible=true;
+        this.gameUI.visible=false;
+        this.mainLayer.visible=false;
+        var lights=this.mainLayer.lights;
+        for(var light in lights){
+            lights[light].body.sleep();
+        }
     },
     onGameResumed: function(){
-        this.removeChild(this.gamePausedUI);
-        this.addChild(this.gameUI,2);
-        this.addChild(this.mainLayer,2);
+        this.gamePausedUI.visible=false;
+        this.gameUI.visible=true;
+        this.mainLayer.visible=true;
         cc.director.resume();
+        var lights=this.mainLayer.lights;
+        for(var light in lights){
+            lights[light].body.activate();
+        }
+    },
+    onGameOver:function () {
+        var gameOverUI=new GameOverUI();
+        this.addChild(gameOverUI,3);
+    },
+    onExit:function () {
+        
     }
 
 });

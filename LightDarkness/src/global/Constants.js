@@ -68,5 +68,6 @@ var Constants={
           {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
       ]
 
-  ]
+  ],
+    gameStates:{success:"success",oneFinish:"onFinish",failure:"failure",idle:"idle"},
 };

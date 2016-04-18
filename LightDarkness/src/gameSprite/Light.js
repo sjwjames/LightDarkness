@@ -14,7 +14,6 @@ var Light=cc.PhysicsSprite.extend({
         this.pos_x=cc.director.getVisibleOrigin().x+50;
         this.pos_y=cc.director.getVisibleOrigin().y+cc.director.getVisibleSize().height/3*2;
         this.spotRadius=this.width*this.scale/2;
-        //console.log(this.pos_x,this.pos_y);
         this.body=new cp.Body(1, cp.momentForCircle(1,0,this.spotRadius,cp.v(0,0)));
         this.body.setPos(cc.p(this.pos_x,this.pos_y));
         this.body.setAngle(0);
@@ -23,10 +22,11 @@ var Light=cc.PhysicsSprite.extend({
         this.shape=new cp.CircleShape(this.body,this.spotRadius,cp.v(0,0));
         this.shape.setElasticity(1);
         this.shape.setFriction(0);
-        this.shape.setCollisionType(2);
+        this.shape.setCollisionType(3);
+        this.shape.data=this;
         space.addShape(this.shape);
         this.setBody(this.body);
-
+        
     }
 });
 

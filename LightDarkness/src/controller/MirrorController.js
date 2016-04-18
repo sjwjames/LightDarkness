@@ -13,14 +13,15 @@ MirrorController.generateMirrors= function (level,space) {
     for(var mirror in mirrors){
         var productedMirror=MirrorFactory.productMirror(mirrors[mirror].type);
         if (productedMirror){
-            var body=new cp.Body(65536, cp.momentForBox(65536, Mirror.width, Mirror.height));
+            var body=new cp.Body(Number.MAX_VALUE, cp.momentForBox(Number.MAX_VALUE, Mirror.width, Mirror.height));
             body.setPos(cc.p(cc.director.getVisibleSize().width*mirrors[mirror].x+cc.director.getVisibleOrigin().x,mirrors[mirror].y+cc.director.getVisibleOrigin().y));
             space.addBody(body);
             var shape=new cp.BoxShape(body,Mirror.width,Mirror.height);
             shape.setElasticity(1);
             shape.setFriction(0);
-            shape.setCollisionType(3);
+            shape.setCollisionType(2);
             space.addShape(shape);
+            shape.data=productedMirror;
             productedMirror.setBody(body);
             productedMirror.setPosition(cc.p(cc.director.getVisibleSize().width*mirrors[mirror].x+cc.director.getVisibleOrigin().x,mirrors[mirror].y+cc.director.getVisibleOrigin().y));
             productedMirror.rotation=mirrors[mirror].angle;

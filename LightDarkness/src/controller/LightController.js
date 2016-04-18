@@ -12,6 +12,7 @@ LightController.generateLight= function (space) {
     var whiteLight=new WhiteLight(res.whiteTexture,space);
     var blackLight=new BlackLight(res.blackTexture,space);
     whiteLight.setPosition(cc.p(whiteLight.pos_x,whiteLight.pos_y));
+    blackLight.setPosition(cc.p(blackLight.pos_x,blackLight.pos_y));
     result.push(whiteLight,blackLight);
     return result;
 };

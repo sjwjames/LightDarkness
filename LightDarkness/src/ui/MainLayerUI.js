@@ -15,12 +15,12 @@ var MainLayerUI=cc.Layer.extend({
         catch (e){
             console.log(e);
         }
-        var altar=new Altar("#taichi.png");
+        var altar=new Altar("#taichi.png",this.space);
         altar.setPosition(cc.p(cc.director.getVisibleOrigin().x+cc.director.getVisibleSize().width*0.85,cc.director.getVisibleSize().height/2+cc.director.getVisibleOrigin().y));
         this.addChild(altar,2);
-        var lights=LightController.generateLight(this.space);
-        for(var light in lights){
-            var myLight=lights[light];
+        this.lights=LightController.generateLight(this.space);
+        for(var light in this.lights){
+            var myLight=this.lights[light];
             this.addChild(myLight,2);
         }
 
@@ -47,29 +47,75 @@ var MainLayerUI=cc.Layer.extend({
         ];
         for (var wall in walls){
             var shape=walls[wall];
+            shape.setCollisionType(1);
             shape.setElasticity(1);
             shape.setFriction(0);
             this.space.addStaticShape(shape);
         }
-        this.space.addCollisionHandler(2,3,this.collisionBegan.bind(this),this.collisionPre.bind(this),this.collisionBind.bind(this),this.collisionSeparate.bind(this));
+        this.space.addCollisionHandler(3,2,this.onCollisionBegan.bind(this),this.onCollisionPre.bind(this),this.onCollisionBind.bind(this),this.onCollisionSeparate.bind(this));
+        this.space.addCollisionHandler(3,1,this.onCollisionBegan.bind(this),this.onCollisionPre.bind(this),this.onCollisionBind.bind(this),this.onCollisionSeparate.bind(this));
+        this.space.addCollisionHandler(3,3,this.onCollisionBegan.bind(this),this.onCollisionPre.bind(this),this.onCollisionBind.bind(this),this.onCollisionSeparate.bind(this));
+        this.space.addCollisionHandler(3,4,this.onCollisionBegan.bind(this),this.onCollisionPre.bind(this),this.onCollisionBind.bind(this),this.onCollisionSeparate.bind(this));
     },
-    collisionBegan: function (ariter, space) {
+    onCollisionBegan: function (arbiter, space) {
+        var shapes = arbiter.getShapes();
+        var light=shapes[0];
+        var shapeB = shapes[1];
+        var type=shapeB.collision_type;
+        switch (type){
+            case 1:
+                this.onWallCollision();
+                break;
+            case 2:
+                var mirror=shapeB.data;
+                mirror.judgeCollision(arbiter);
+                break;
+            case 3:
+                this.onBallCollision();
+                break;
+            case 4:
+                var altar=shapeB.data;
+                var result=altar.judgeCollision(arbiter);
+                if (result){
+                    space.addPostStepCallback(function () {
+                        space.removeShape(light);
+                        light.data.removeFromParent();
+                    });
+                    if (GameStats.gameState==Constants.gameStates.idle){
+                        GameStats.gameState=Constants.gameStates.oneFinish;
+                    }else if(GameStats.gameState==Constants.gameStates.oneFinish){
+                        GameStats.gameState=Constants.gameStates.success;
+                    }
+                }else{
+                    cc.eventManager.dispatchCustomEvent("gameOver");
+                }
+
+                break;
+            default:
+                break;
+        }
+        return true;
+    },
+    onCollisionPre: function (arbiter, space) {
+        return true;
+    },
+    onCollisionBind: function (arbiter, space) {
+        return true;
+    },
+    onCollisionSeparate: function (arbiter, space) {
 
         return true;
     },
-    collisionPre: function (ariter, space) {
-        return true;
-    },
-    collisionBind: function (ariter, space) {
-        return true;
-    },
-    collisionSeparate: function (ariter, space) {
-        var shapes = ariter.getShapes();
-        var light = shapes[0].getBody().data;
-        var mirror = shapes[1].getBody().data;
 
-        return true;
+    onWallCollision:function () {
+        cc.eventManager.dispatchCustomEvent("gameOver");
     },
+
+    onBallCollision:function () {
+        cc.eventManager.dispatchCustomEvent("gameOver");
+    },
+
+
     setupDebugNode: function () {
         this._debugNode=new cc.PhysicsDebugNode(this.space);
         this._debugNode.visible=true;
