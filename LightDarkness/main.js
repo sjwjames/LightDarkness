@@ -51,6 +51,26 @@
  *
  */
 
+var ld={};
+ld.showOrientationTip= function () {
+    if(!ld.orientationTip){
+        ld.orientationTip=new cc.LayerColor(cc.color(0, 0, 0), cc.visibleRect.width, cc.visibleRect.height);
+        var rotateImg =new cc.Sprite(res.rotateImg);
+        rotateImg.setPosition(cc.visibleRect.center);
+        ld.orientationTip.addChild(rotateImg,1);
+    }
+    ld.orientationTip.removeFromParent();
+    if(window.innerHeight<window.innerWidth){
+        if (cc.director.isPaused()){
+            cc.director.resume();
+        }
+    }else {
+        cc.director.getRunningScene().addChild(ld.orientationTip,100);
+        cc.director.pause();
+    }
+
+};
+
 cc.game.onStart = function(){
     if(!cc.sys.isNative && document.getElementById("cocosLoading")) //If referenced loading.js, please remove it
         document.body.removeChild(document.getElementById("cocosLoading"));
@@ -66,6 +86,9 @@ cc.game.onStart = function(){
     // cc.view.setRealPixelResolution(960, 640, cc.ResolutionPolicy.SHOW_ALL);
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
+    cc.view.setResizeCallback(function() {
+        ld.showOrientationTip();
+    });
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
         cc.director.runScene(new StartScene ());

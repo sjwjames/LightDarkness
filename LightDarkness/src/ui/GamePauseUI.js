@@ -20,9 +20,9 @@ var GamePauseUI=cc.Layer.extend({
          GameController.resume();
     },
     onRetryGame: function () {
-
+         GameController.retry();
     },
     onQuitGame: function () {
-
+         GameController.quit();
     }
 });

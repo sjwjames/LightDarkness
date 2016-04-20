@@ -6,68 +6,60 @@ var Constants={
       [
       {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
       {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-      {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-      {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+      {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:90,type:2},
+      {x:0.2,y:cc.director.getVisibleSize().height/3,angle:90,type:3},
       {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
       {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
      ],
       [
-          {x:0,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:0,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
+          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
       ],
       [
-          {x:0,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:0,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
+          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
       ],
       [
-          {x:0,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:0,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
+          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
       ],
       [
-          {x:0,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:0,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
+          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
       ],
       [
-          {x:0,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:0,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
-      ],
-      [
-          {x:0,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:0,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
-      ],
-      [
-          {x:0,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/3*2,angle:0,type:1},
-          {x:0,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:100,y:cc.director.getVisibleSize().height/2,angle:0,type:1},
-          {x:200,y:cc.director.getVisibleSize().height/2,angle:0,type:1}
+          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
+          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
+          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
       ]
-
   ],
+    altar:[
+        {x:0.85,y:0.5,angle:-90},
+        {x:0.85,y:0.5,angle:90},
+        {x:0.85,y:0.5,angle:90},
+        {x:0.85,y:0.5,angle:90},
+        {x:0.85,y:0.5,angle:90},
+        {x:0.85,y:0.5,angle:90}
+    ],
     gameStates:{success:"success",oneFinish:"onFinish",failure:"failure",idle:"idle"},
+    levelCount:6
 };

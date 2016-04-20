@@ -15,8 +15,7 @@ var MainLayerUI=cc.Layer.extend({
         catch (e){
             console.log(e);
         }
-        var altar=new Altar("#taichi.png",this.space);
-        altar.setPosition(cc.p(cc.director.getVisibleOrigin().x+cc.director.getVisibleSize().width*0.85,cc.director.getVisibleSize().height/2+cc.director.getVisibleOrigin().y));
+        var altar=AltarController.generateAltar(level,this.space);
         this.addChild(altar,2);
         this.lights=LightController.generateLight(this.space);
         for(var light in this.lights){
@@ -37,7 +36,7 @@ var MainLayerUI=cc.Layer.extend({
     initPhysics: function () {
         var visibleSize=cc.director.getVisibleSize();
         this.space=new cp.Space();
-        this.setupDebugNode();
+        //this.setupDebugNode();
         this.space.gravity=cp.v(0,0);
         var staticBody=this.space.staticBody;
         var walls=[new cp.SegmentShape(staticBody,cp.v(0,0),cp.v(visibleSize.width,0),0),
@@ -64,14 +63,21 @@ var MainLayerUI=cc.Layer.extend({
         var type=shapeB.collision_type;
         switch (type){
             case 1:
-                this.onWallCollision();
+                space.addPostStepCallback(function () {
+                    this.onWallCollision();
+                }.bind(this));
                 break;
             case 2:
                 var mirror=shapeB.data;
-                mirror.judgeCollision(arbiter);
+                space.addPostStepCallback(function () {
+                    mirror.judgeCollision(arbiter);
+                }.bind(this));
+
                 break;
             case 3:
-                this.onBallCollision();
+                space.addPostStepCallback(function () {
+                    this.onBallCollision();
+                }.bind(this));
                 break;
             case 4:
                 var altar=shapeB.data;
@@ -85,9 +91,18 @@ var MainLayerUI=cc.Layer.extend({
                         GameStats.gameState=Constants.gameStates.oneFinish;
                     }else if(GameStats.gameState==Constants.gameStates.oneFinish){
                         GameStats.gameState=Constants.gameStates.success;
+                        space.addPostStepCallback(function () {
+                            GameController.win();
+                        }.bind(this));
+
                     }
                 }else{
-                    cc.eventManager.dispatchCustomEvent("gameOver");
+                    space.addPostStepCallback(function () {
+                        if(GameStats.gameState==Constants.gameStates.idle){
+                            GameController.over();
+                        }
+
+                    }.bind(this));
                 }
 
                 break;
@@ -108,11 +123,11 @@ var MainLayerUI=cc.Layer.extend({
     },
 
     onWallCollision:function () {
-        cc.eventManager.dispatchCustomEvent("gameOver");
+        GameController.over();
     },
 
     onBallCollision:function () {
-        cc.eventManager.dispatchCustomEvent("gameOver");
+        GameController.over();
     },
 
 
@@ -125,5 +140,12 @@ var MainLayerUI=cc.Layer.extend({
         this._super(dt);
         var timeStep = 0.03;
         this.space.step(timeStep);
+    },
+    onExit: function () {
+        this._super();
+        this.space.removeCollisionHandler(3,1);
+        this.space.removeCollisionHandler(3,2);
+        this.space.removeCollisionHandler(3,3);
+        this.space.removeCollisionHandler(3,4);
     }
 });

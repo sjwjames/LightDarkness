@@ -12,7 +12,8 @@ var res = {
     whitePlist:"res/particle/whiteParticle/particle.plist",
     whiteTexture:"res/particle/whiteParticle/texture.png",
     blackPlist:"res/particle/blackParticle/particle.plist",
-    blackTexture:"res/particle/blackParticle/texture.png"
+    blackTexture:"res/particle/blackParticle/texture.png",
+    rotateImg:"res/ui/rotate.png"
 };
 
 var g_resources = [];

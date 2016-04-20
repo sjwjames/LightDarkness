@@ -19,7 +19,7 @@ var GameUI=cc.Layer.extend({
     },
     onPause: function (touch,event) {
         if(OnTouch.withInReach(touch,event)){
-            cc.eventManager.dispatchCustomEvent("gamePaused");
+           GameController.pause();
         }
     }
 

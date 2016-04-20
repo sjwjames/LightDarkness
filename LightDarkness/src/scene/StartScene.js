@@ -6,5 +6,10 @@ var StartScene=cc.Scene.extend({
         this._super();
         this.startUI=new StartUI();
         this.addChild(this.startUI);
+    },
+    onEnter: function () {
+        this._super();
+        cc.director.resume();
+        ld.showOrientationTip();
     }
 });

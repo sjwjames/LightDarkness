@@ -77,6 +77,7 @@ var LevelsUI=cc.Layer.extend({
               if (GameStats.lastLevel+1<userObj.level){
                   console.log("暂时不能玩耍这个关卡");
               }else{
+                  GameStats.currentLevel=userObj.level;
                   cc.director.runScene(new GameScene(userObj.level));
               }
             //cc.director.runScene();
