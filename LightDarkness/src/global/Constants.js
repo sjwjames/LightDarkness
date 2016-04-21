@@ -4,52 +4,52 @@
 var Constants={
   mirrors:[
       [
-      {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-      {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-      {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:90,type:2},
-      {x:0.2,y:cc.director.getVisibleSize().height/3,angle:90,type:3},
-      {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-      {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
+      {x:0.2,y:480,angle:0,type:2},
+      {x:0.4,y:480,angle:0,type:2},
+      {x:0.6,y:480,angle:90,type:2},
+      {x:0.2,y:240,angle:90,type:3},
+      {x:0.4,y:240,angle:0,type:3},
+      {x:0.6,y:240,angle:0,type:3}
      ],
       [
-          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
+          {x:0.2,y:480,angle:0,type:2},
+          {x:0.4,y:480,angle:0,type:2},
+          {x:0.6,y:480,angle:0,type:2},
+          {x:0.2,y:240,angle:0,type:3},
+          {x:0.4,y:240,angle:0,type:3},
+          {x:0.6,y:240,angle:0,type:3}
       ],
       [
-          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
+          {x:0.2,y:480,angle:0,type:2},
+          {x:0.4,y:480,angle:0,type:2},
+          {x:0.6,y:480,angle:0,type:2},
+          {x:0.2,y:240,angle:0,type:3},
+          {x:0.4,y:240,angle:0,type:3},
+          {x:0.6,y:240,angle:0,type:3}
       ],
       [
-          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
+          {x:0.2,y:480,angle:0,type:2},
+          {x:0.4,y:480,angle:0,type:2},
+          {x:0.6,y:480,angle:0,type:2},
+          {x:0.2,y:240,angle:0,type:3},
+          {x:0.4,y:240,angle:0,type:3},
+          {x:0.6,y:240,angle:0,type:3}
       ],
       [
-          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
+          {x:0.2,y:480,angle:0,type:2},
+          {x:0.4,y:480,angle:0,type:2},
+          {x:0.6,y:480,angle:0,type:2},
+          {x:0.2,y:240,angle:0,type:3},
+          {x:0.4,y:240,angle:0,type:3},
+          {x:0.6,y:240,angle:0,type:3}
       ],
       [
-          {x:0.2,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.4,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.6,y:cc.director.getVisibleSize().height/3*2,angle:0,type:2},
-          {x:0.2,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.4,y:cc.director.getVisibleSize().height/3,angle:0,type:3},
-          {x:0.6,y:cc.director.getVisibleSize().height/3,angle:0,type:3}
+          {x:0.2,y:480,angle:0,type:2},
+          {x:0.4,y:480,angle:0,type:2},
+          {x:0.6,y:480,angle:0,type:2},
+          {x:0.2,y:240,angle:0,type:3},
+          {x:0.4,y:240,angle:0,type:3},
+          {x:0.6,y:240,angle:0,type:3}
       ]
   ],
     altar:[

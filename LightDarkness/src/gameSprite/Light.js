@@ -37,7 +37,7 @@ var WhiteLight=Light.extend({
         //particle.setPosition(cc.p(0,0));
         //particle.angle=180;
         //this.addChild(particle);
-        this.body.setVel(cp.v(0,0));
+       
     }
 });
 
