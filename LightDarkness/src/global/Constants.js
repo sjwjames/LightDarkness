@@ -61,5 +61,7 @@ var Constants={
         {x:0.85,y:0.5,angle:90}
     ],
     gameStates:{success:"success",oneFinish:"onFinish",failure:"failure",idle:"idle"},
-    levelCount:6
+    levelCount:6,
+    chipmunkRefresh:0.03
+    
 };

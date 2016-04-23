@@ -7,6 +7,7 @@
     "noCache" : false,
     "id" : "gameCanvas",
     "renderMode" : 0,
+    "chipmunkRefresh":0.03,
     "engineDir":"frameworks/cocos2d-html5",
 
     "modules" : ["cocos2d", "cocostudio","external"],

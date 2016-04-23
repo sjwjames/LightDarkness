@@ -17,7 +17,7 @@ var Light=cc.PhysicsSprite.extend({
         this.body=new cp.Body(1, cp.momentForCircle(1,0,this.spotRadius,cp.v(0,0)));
         this.body.setPos(cc.p(this.pos_x,this.pos_y));
         this.body.setAngle(0);
-        this.body.setVel(cp.v(100,0));
+        // this.body.setVel(cp.v(100,0));
         space.addBody(this.body);
         this.shape=new cp.CircleShape(this.body,this.spotRadius,cp.v(0,0));
         this.shape.setElasticity(1);
@@ -37,7 +37,7 @@ var WhiteLight=Light.extend({
         //particle.setPosition(cc.p(0,0));
         //particle.angle=180;
         //this.addChild(particle);
-       
+        this.pos_y=cc.director.getVisibleOrigin().y+cc.director.getVisibleSize().height/3*2-50;
     }
 });
 

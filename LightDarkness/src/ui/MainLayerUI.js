@@ -3,6 +3,7 @@
  */
 var MainLayerUI=cc.Layer.extend({
     space:null,
+    first_touch:true,
     ctor: function (level) {
         this._super();
         this.initPhysics();
@@ -24,14 +25,25 @@ var MainLayerUI=cc.Layer.extend({
         }
 
         try{
-            var listener=ListenerFactory.getTouchListener(function () {
-                cc.director.resume();
-            }.bind(this));
-            cc.eventManager.addListener(listener,this)
+            // var listener=ListenerFactory.getTouchListener(function () {
+            //     cc.director.resume();
+            // }.bind(this));
+            // cc.eventManager.addListener(listener,this);
+            var startListener=ListenerFactory.getTouchListener(this.onGameStart.bind(this));
+            cc.eventManager.addListener(startListener,this);
         }catch (e){
             console.log(e);
         }
         this.scheduleUpdate();
+    },
+    onGameStart:function (touch,event) {
+       if (this.first_touch){
+           for(var light in this.lights){
+               var myLight=this.lights[light];
+               myLight.body.setVel(cp.v(100,0));
+           }
+           this.first_touch=false;
+       }
     },
     initPhysics: function () {
         var visibleSize=cc.director.getVisibleSize();
@@ -138,8 +150,7 @@ var MainLayerUI=cc.Layer.extend({
     },
     update: function (dt) {
         this._super(dt);
-        var timeStep = 0.03;
-        this.space.step(timeStep);
+        this.space.step(Constants.chipmunkRefresh);
     },
     onExit: function () {
         this._super();
