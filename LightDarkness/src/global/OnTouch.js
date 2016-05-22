@@ -15,4 +15,5 @@ OnTouch.withInReach= function (touch,event) {
     }else{
         return false;
     }
-}
+};
+

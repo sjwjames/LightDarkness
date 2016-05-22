@@ -38,6 +38,8 @@ var WhiteLight=Light.extend({
         //particle.angle=180;
         //this.addChild(particle);
         this.pos_y=cc.director.getVisibleOrigin().y+cc.director.getVisibleSize().height/3*2-50;
+        // var particle=new cc.ParticleSystem(res.whitePlist);
+        // this.addChild(particle);
     }
 });
 

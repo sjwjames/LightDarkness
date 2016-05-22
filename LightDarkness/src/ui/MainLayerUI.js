@@ -8,9 +8,9 @@ var MainLayerUI=cc.Layer.extend({
         this._super();
         this.initPhysics();
         try{
-            var mirrors=MirrorController.generateMirrors(level,this.space);
-            for(var mirror in mirrors){
-                this.addChild(mirrors[mirror],2);
+            this.mirrors=MirrorController.generateMirrors(level,this.space);
+            for(var mirror in this.mirrors){
+                this.addChild(this.mirrors[mirror],2);
             }
         }
         catch (e){
@@ -38,11 +38,26 @@ var MainLayerUI=cc.Layer.extend({
     },
     onGameStart:function (touch,event) {
        if (this.first_touch){
-           for(var light in this.lights){
-               var myLight=this.lights[light];
-               myLight.body.setVel(cp.v(100,0));
-           }
-           this.first_touch=false;
+           var doWithMirror=false;
+            for (var m in this.mirrors){
+                var mirror= this.mirrors[m];
+                var rect = cc.rect(0, 0,mirror.getContentSize().width,mirror.getContentSize().height);
+                var locationInNode = mirror.convertToNodeSpace(touch.getLocation());
+
+                if (cc.rectContainsPoint(rect,locationInNode)) {       // 判断触摸点是否在按钮范围内
+                    doWithMirror=true;
+                    break;
+                }
+            }
+
+            if(!doWithMirror){
+                for(var light in this.lights){
+                    var myLight=this.lights[light];
+                    myLight.body.setVel(cp.v(100,0));
+                }
+                this.first_touch=false;
+            }
+
        }
     },
     initPhysics: function () {

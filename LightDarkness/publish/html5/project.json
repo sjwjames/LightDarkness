@@ -1,1 +1,1 @@
-{"showFPS": true, "noCache": false, "frameRate": 60, "project_type": "javascript", "debugMode": 1, "renderMode": 0, "id": "gameCanvas"}
+{"showFPS": true, "noCache": false, "frameRate": 60, "chipmunkRefresh": 0.03, "project_type": "javascript", "debugMode": 1, "renderMode": 0, "id": "gameCanvas"}
